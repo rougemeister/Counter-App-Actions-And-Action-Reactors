@@ -5,8 +5,8 @@ export const initialState = JSON.parse(localStorage.getItem('count') ?? '0');
 
 export const countReducer = createReducer(
   initialState,
-  on(increment, (state) => state + 1),
-  on(decrement, (state) => (state > 0 ? state - 1 : state)),
-  on(reset, (state) => 0),
+  on(increment, (state, { amount }) => state + amount),
+  on(decrement, (state, { amount }) => Math.max(0, state - amount)),
+  on(reset, () => 0),
   on(setCounter, (state, { value }) => value)
 );

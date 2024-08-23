@@ -36,3 +36,4 @@ export class CounterComponent {
     this.store.dispatch(reset());
   }
 }
+
