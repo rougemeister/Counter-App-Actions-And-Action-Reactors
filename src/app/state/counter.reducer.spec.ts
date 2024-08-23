@@ -7,13 +7,14 @@ describe('countReducer', () => {
   });
 
   it('should increment the count', () => {
-    expect(countReducer(0, increment())).toEqual(1);
-    expect(countReducer(5, increment())).toEqual(6);
+    expect(countReducer(0, increment({ amount: 1 }))).toEqual(1);
+    expect(countReducer(5, increment({ amount: 2 }))).toEqual(7);
   });
 
   it('should decrement the count', () => {
-    expect(countReducer(5, decrement())).toEqual(4);
-    expect(countReducer(0, decrement())).toEqual(0);
+    expect(countReducer(5, decrement({ amount: 1 }))).toEqual(4);
+    expect(countReducer(3, decrement({ amount: 2 }))).toEqual(1);
+    expect(countReducer(1, decrement({ amount: 2 }))).toEqual(0);
   });
 
   it('should reset the count', () => {
