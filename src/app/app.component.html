@@ -12,6 +12,14 @@
         <button  (click)="updateCounter()">Add</button>
       </div>
     </div>
+} @else if(showIntervalModal)  {
+  <div class="counterModal">
+    <div class="modal-content">
+      <p>Set interval to ...</p>
+      <input type="number" name="counter" id="counter" min="0" value="0" [(ngModel)]="inputInterval" >
+      <button (click)=" updateInterval() "  >Add</button>
+    </div>
+  </div>
 }
   
 

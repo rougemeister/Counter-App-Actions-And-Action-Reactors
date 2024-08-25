@@ -16,3 +16,13 @@ export const setCounter = createAction(
   '[Counter Component] Set Counter',
   props<{ value: number }>()
 );
+
+export const incrementBy = createAction(
+  '[Counter] Increment By',
+  props<{ value: number }>()  // Expecting a property named 'value'
+);
+
+export const decrementBy = createAction(
+  '[Counter Component] Increment By',
+  props<{ value: number }>() // This will carry the payload
+);

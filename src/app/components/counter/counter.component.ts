@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { increment, decrement, reset } from '../../state/counter.actions';
+import { increment, decrement, reset,incrementBy, decrementBy } from '../../state/counter.actions';
 import { AsyncPipe } from '@angular/common';
 import { selectCount } from '../../state/counter.selector';
 import { OptionsComponent } from '../options/options.component';
@@ -32,8 +32,13 @@ export class CounterComponent {
     this.store.dispatch(decrement({ amount: 1 }));
   }
 
+  incrementBy(value: number) {
+    this.store.dispatch(incrementBy({ value }));
+  }
+  
+
+
   reset() {
     this.store.dispatch(reset());
   }
 }
-
